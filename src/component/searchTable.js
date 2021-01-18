@@ -1,7 +1,18 @@
 import React from 'react';
-import { MDBDataTable } from 'mdbreact';
+import { MDBDataTable, MDBDataTableV5, MDBBtn, MDBTableHead, MDBTableBody, MDBTable, Button } from 'mdbreact';
 
 const DatatablePage = () => {
+
+    // const [data, setData] = useState([])
+    // useEffect(() => {
+    //     fetch('http://helixsmartlabs.in/portfolio/old/bed_bureau/bed.php')
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             console.log(result)
+    //             setData(result.posts)
+    //         })
+    // }, [])
+
     const data = {
         columns: [
             {
@@ -75,7 +86,16 @@ const DatatablePage = () => {
                 field: 'admin',
                 sort: 'asc',
                 width: 100
+            },
+            {
+                label: 'Action',
+                field: 'action',
+                width: 100,
+
+
             }
+
+
         ],
         rows: [
             {
@@ -90,7 +110,9 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "Covid-19",
                 gender: "Male",
-                admin: "vivek@gmail.com"
+                admin: "vivek@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
+
             },
             {
                 name: 'Max',
@@ -104,7 +126,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "General",
                 gender: "Female",
-                admin: "dhruv@gmail.com"
+                admin: "dhruv@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Escort',
@@ -118,7 +141,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "General",
                 gender: "Female",
-                admin: "dhruv@gmail.com"
+                admin: "dhruv@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Vedanta',
@@ -132,7 +156,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "Covid-19",
                 gender: "Male",
-                admin: "dhruv@gmail.com"
+                admin: "dhruv@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Vedanta',
@@ -146,7 +171,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "Covid-19",
                 gender: "Female",
-                admin: "dhruv@gmail.com"
+                admin: "dhruv@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Escort',
@@ -160,7 +186,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "General",
                 gender: "Male",
-                admin: "dhruv@gmail.com"
+                admin: "dhruv@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'AIIMS',
@@ -174,7 +201,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "Covid-19",
                 gender: "Male",
-                admin: "vivek@gmail.com"
+                admin: "vivek@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'AIIMS',
@@ -188,7 +216,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "Covid-19",
                 gender: "Female",
-                admin: "vivek@gmail.com"
+                admin: "vivek@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Aditya',
@@ -202,7 +231,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "General",
                 gender: "Male",
-                admin: "vikas@gmail.com"
+                admin: "vikas@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Aditya',
@@ -216,7 +246,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "General",
                 gender: "Female",
-                admin: "vikas@gmail.com"
+                admin: "vikas@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Apex',
@@ -230,7 +261,8 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "Covid-19",
                 gender: "Female",
-                admin: "tusar@gmail.com"
+                admin: "tusar@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             },
             {
                 name: 'Apex',
@@ -244,18 +276,25 @@ const DatatablePage = () => {
                 queue: "0",
                 type: "Covid-19",
                 gender: "Male",
-                admin: "tusar@gmail.com"
+                admin: "tusar@gmail.com",
+                action: <MDBBtn rounded color="info" size="sm">Action</MDBBtn>
             }
 
         ]
     };
 
     return (
+
+
         <MDBDataTable
             striped
             bordered
             small
+            hover
+
             data={data}
+            btn
+            className="blueTable"
         />
     );
 }
